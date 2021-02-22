@@ -1,0 +1,348 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;700&display=swap');
+
+@mixin font($size, $height, $weight) {
+    font-size: $size;
+    line-height: $height;
+    font-weight: $weight;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    font-family: "Poppins", sans-serif;
+}
+
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+a {
+    text-decoration: none;
+    color: #000;
+}
+li {
+    list-style: none;
+}
+ul {
+    padding: 0;
+    margin: 0;
+}
+h1, h2, h3, h4, h5, h6, p {
+    margin: 0;
+}
+
+/* *** Header *** */
+.container {
+    max-width: 1170px;
+    padding: 0 15px;
+    margin: 0 auto;
+}
+
+.header {
+    &__inner {
+        height: 50px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin: 16px 0;
+    }
+    &__content {
+        height: 745px;
+        background: url("../img/bg.png") no-repeat center / cover;
+    }
+}
+
+.logo {
+    @include font(28px, 42px, 700);
+    text-transform: uppercase;
+}
+
+.nav {
+    &__list {
+        display: flex;
+        width: 530px;
+        justify-content: space-between;
+        align-items: center;
+    }
+    &__link {
+        @include font(18px, 27px, 400);
+        text-transform: uppercase;
+        transition: .3s;
+        &:hover {
+            text-decoration: underline;
+        }
+    }
+}
+
+.product-icons {
+    width: 148px;
+    justify-content: space-between;
+    display: flex;
+    &__item {
+        width: 18px;
+    }
+}
+
+.trend {
+    max-width: 455px;
+    float: right;
+    margin-top: 430px;
+    &__suptitle {
+        @include font(18px, 27px, 500);
+        text-transform: uppercase;
+    } 
+    &__title {
+        @include font(80px, 110px, 700);
+        text-transform: uppercase;
+    } 
+    &__subtitle {
+        @include font(18px, 27px, 500);
+        margin-bottom: 27px;
+    }
+    &__btn {
+        @include font(18px, 35px, 500);
+        width: 150px;
+        height: 35px;
+        background-color: #000;
+        color: #fff;
+        text-transform: uppercase;
+        display: inline-block;
+        text-align: center;
+        vertical-align: middle;
+        &-discover {
+            margin-right: 53px;
+        }
+    }
+}
+
+/* *** Categories *** */
+.category {
+    padding: 120px 0 55px;
+}
+.category__grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-auto-rows: 265px;
+    grid-gap: 25px;
+    &-item {
+        & img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        &:first-child {
+            grid-column: 1/3;
+        }
+        &:nth-child(2) {
+            grid-column: 3/5;
+            grid-row: 1/3;
+        }
+    }
+}
+
+/* *** Woman *** */
+.woman {
+    padding: 55px 0 55px;
+}
+.block__title {
+    @include font(20px, 30px, 700);
+    text-align: center;
+    text-transform: uppercase;
+}
+.block__subtitle {
+    @include font(15px, 22px, 400);
+    text-align: center;
+    margin: 15px 0 65px;
+}
+.card {
+    outline: none;
+    text-transform: uppercase;
+    &__content {
+        padding-top: 35px;
+    }
+    &__img {
+        width: 270px;
+    }
+    &__img img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+    &__title {
+        @include font(15px, 22px, 300);
+        margin: 38px 0 3px;
+    }
+    &__description {
+        @include font(15px, 22px, 600);
+        margin-bottom: 3px;
+    }
+    &__old-price {
+        @include font(15px, 22px, 400);
+        text-decoration: line-through;
+    }
+    &__price {
+        @include font(15px, 22px, 400);
+        color: #CF2929;
+    }
+}
+.show-dress__text {
+    position: absolute;
+    bottom: 65px;
+    right: 260px;
+    @include font(15px, 22px, 400);
+    text-transform: uppercase;
+    &::after {
+        content: "";
+        position: absolute;
+        width: 100%;
+        height: 1px;
+        left: 0;
+        bottom: -4px;
+        background-color: #000;
+    }
+}
+
+/* *** Man *** */
+.man {
+    padding: 55px 0;
+}
+
+/* *** Avone *** */
+.avone {
+    padding: 55px 0;
+    &__inner {
+        position: relative;
+        display: flex;
+        justify-content: space-between;
+        padding-right: 38px;
+    }
+    &__img-bottom {
+        position: absolute;
+        bottom: 0;
+        right: -38px;
+        padding: 22px;
+        background-color: #fff;
+    }
+    &__img-left {
+        padding-top: 83px;
+    }
+}
+
+/* *** Tachen *** */
+.tachen {
+    margin-top: 60px;
+    background: url("../img/tachen-bg.jpg") no-repeat center / cover;
+    height: 745px;
+    &__box {
+        max-width: 426px;
+        padding-top: 436px;
+    }
+    & a {
+        width: 214px;
+        margin-top: 5px;
+    }
+}
+
+/* *** Footer *** */
+.footer {
+    padding-top: 115px;
+    background-color: #f2f8fc;
+    &__inner {
+        display: flex;
+        justify-content: space-between;
+        padding-bottom: 106px;
+    }
+    &__contact {
+        max-width: 406px;
+        @include font(15px, 22px, 400);
+        &-social img {
+            width: 20px;
+        }
+        &-text {
+            margin: 17px 0 41px;
+        }
+        &-address {
+            margin-bottom: 16px;
+            display: inline-block;
+        }
+        &-social a {
+            display: inline-block;
+            margin-right: 18px;
+            margin-top: 16px;
+        }
+        &-email {
+            display: inline-block;
+            position: relative;
+            margin-bottom: 10px;
+            &::after {
+                content: "";
+                width: 100%;
+                height: 1px;
+                background-color: #000;
+                position: absolute;
+                bottom: -5px;
+                left: 0;
+            }
+        }
+    }
+    &__control {
+        width: 532px;
+        @include font(15px, 22px, 400);
+        &-title {
+            @include font(25px, 37px, 700);
+            text-transform: uppercase;
+            margin-bottom: 24px;
+        }
+        &-form {
+            margin-bottom: 70px;
+            position: relative;
+            & input {
+                width: 100%;
+                height: 45px;
+                border-radius: 5px;
+                outline: none;
+                border: none;
+                padding-left: 24px;
+                box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.07);
+                &:focus::placeholder {
+                    opacity: 0;
+                }
+                &::placeholder {
+                    @include font(15px, 22px, 400);
+                    color: #22262A;
+                    font-family: "Poppins", sans-serif;
+                    transform: .2s;
+                }
+            }
+        }
+        &-submit {
+            position: absolute;
+            right: 20px;
+            bottom: 9px;
+            background-color: transparent;
+            border: none;
+            text-transform: uppercase;
+            @include font(15px, 22px, 600);
+            cursor: pointer;
+        }
+    }
+    &__nav {
+        display: flex;
+        justify-content: space-between;
+        &-item h4 {
+            text-align: start;
+            margin-bottom: 6px;
+        }
+        &-item li {
+            margin-top: 21px;
+        }
+    }
+    &__privacy {
+        padding: 35px 0;
+        background-color: #E7F5F8;
+        & p {
+            text-align: center;
+        }
+    }
+}
